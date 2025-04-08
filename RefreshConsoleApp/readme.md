@@ -36,3 +36,11 @@ follow the steps here: https://learn.microsoft.com/en-us/ef/core/cli/dotnet
 
 prop
 
+# Composition vs Inheritance
+
+Inheritance: more coupling
+Composition: loose coupling
+
+
+Best practice is **Composition**
+

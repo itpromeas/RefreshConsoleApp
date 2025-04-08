@@ -2,6 +2,7 @@
 
 
 using RefreshConsoleApp;
+using RefreshConsoleApp.Compisition;
 
 
 
@@ -13,12 +14,31 @@ using RefreshConsoleApp;
 //PersonDetails();
 
 //HttpCookie();
+// Inheritance()
 
 
-var text = new Text();
-text.Width = 100;
-text.Height = 100;
-text.Copy();
+
+
+static void Composition()
+{
+    var dbMigrator = new DbMigration(new Logger());
+
+    
+    var logger = new Logger();
+    var installer = new Installer(logger);
+
+    dbMigrator.Mygrate();
+    installer.Install();
+}
+
+
+static void Inheritance()
+{
+    var text = new Text();
+    text.Width = 100;
+    text.Height = 100;
+    text.Copy();
+}
 
 
 static void HttpCookie()
