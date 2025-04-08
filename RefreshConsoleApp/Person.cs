@@ -9,7 +9,18 @@ namespace RefreshConsoleApp
     public class Person
     {
         private string? _name;
-        public DateTime _birthdate { get; set; }
+        public DateTime Birthdate { get; private set; } // private set; means that _birthdate can only be set once
+
+
+        public Person(DateTime birthdate)
+        {
+            Birthdate = birthdate;
+        }
+
+        public Person()
+        {
+            
+        }
 
         /*
         private DateTime _birthdate;
@@ -28,6 +39,18 @@ namespace RefreshConsoleApp
         {
             return _birthdate;
         }*/
+
+        public int Age 
+        {
+            get 
+            {
+                var timeSpan = DateTime.Today - Birthdate;
+                var years = timeSpan.Days/365;
+                return years;
+            }
+        }
+
+
 
 
         public void Introduction(string to)

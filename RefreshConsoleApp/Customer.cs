@@ -13,9 +13,6 @@ namespace RefreshConsoleApp
 
         private readonly List<Order> Orders = new List<Order>();
 
-        public Customer()
-        {
-        }
 
         public Customer(int id)
         {

@@ -20,7 +20,19 @@ productivity power tool
 
 NameOfTheProject\bin\Debug
 
-type the following in order to open the assembly: ildasm nameOf.exe
+type the following in order to open the assembly: 
+
+ildasm nameOf.exe
 
 
-il=intermediate language 
+il = intermediate language 
+ildasm = Intermediate Language Disassembler
+
+if not working, then
+
+follow the steps here: https://learn.microsoft.com/en-us/ef/core/cli/dotnet
+
+# shortcut for properties
+
+prop
+

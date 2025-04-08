@@ -8,9 +8,9 @@ using RefreshConsoleApp;
 
 
 
-CustomerOrder();
+//CustomerOrder();
 
-
+PersonDetails();
 
 
 
@@ -19,8 +19,8 @@ CustomerOrder();
 
 static void PersonDetails()
 {
-    var person = Person.Parse("Markus");
-    person.Introduction("Philip");
+    var person = new Person(new DateTime(1987, 11, 30));
+    Console.WriteLine(person.Age);
 }
 
 
