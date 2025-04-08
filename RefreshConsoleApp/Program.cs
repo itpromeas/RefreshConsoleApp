@@ -12,8 +12,13 @@ using RefreshConsoleApp;
 
 //PersonDetails();
 
-HttpCookie();
+//HttpCookie();
 
+
+var text = new Text();
+text.Width = 100;
+text.Height = 100;
+text.Copy();
 
 
 static void HttpCookie()
