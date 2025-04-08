@@ -16,7 +16,7 @@ using RefreshConsoleApp.Compisition;
 //HttpCookie();
 // Inheritance()
 
-
+Composition();
 
 
 static void Composition()
