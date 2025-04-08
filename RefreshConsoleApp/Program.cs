@@ -10,10 +10,18 @@ using RefreshConsoleApp;
 
 //CustomerOrder();
 
-PersonDetails();
+//PersonDetails();
+
+HttpCookie();
 
 
 
+static void HttpCookie()
+{
+    var cookie = new HttpCookie();
+    cookie["name"] = "Ange";
+    Console.WriteLine(cookie["name"]);
+}
 
 
 
