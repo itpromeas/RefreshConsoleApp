@@ -2,6 +2,7 @@
 
 
 using RefreshConsoleApp;
+using RefreshConsoleApp.Casting;
 using RefreshConsoleApp.Compisition;
 
 
@@ -16,7 +17,22 @@ using RefreshConsoleApp.Compisition;
 //HttpCookie();
 // Inheritance()
 
-Composition();
+//Composition();
+
+static void Casting()
+{
+    var house = new House();
+
+
+    Shape shape = house;
+
+    Car car = (Car)shape; // or one can also use keyword as
+
+    Car? car2 = shape as Car;
+
+    if (car2 != null)
+        Console.WriteLine("car2 is null");
+}
 
 
 static void Composition()
