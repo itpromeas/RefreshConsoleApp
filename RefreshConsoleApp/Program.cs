@@ -4,9 +4,14 @@
 using RefreshConsoleApp;
 using RefreshConsoleApp.Casting;
 using RefreshConsoleApp.Compisition;
+using RefreshConsoleApp.Testability;
 
 
+var orderProcessor = new OrderProcessor(new ShippingCalculator());
 
+var order = new Order { DatePlaced = DateTime.Now, TotalPrice = 100f };
+
+orderProcessor.Process(order);
 
 
 

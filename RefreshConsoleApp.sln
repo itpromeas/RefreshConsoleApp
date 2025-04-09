@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopWatchExercise", "StopWa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackExercise", "StackExercise\StackExercise.csproj", "{D901B1CF-A5FB-4B09-A0D7-C1BFD91F7EE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testability.Unitests", "Testability.Unitests\Testability.Unitests.csproj", "{2DD9AC4A-C1E5-400E-A04B-818469604F33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D901B1CF-A5FB-4B09-A0D7-C1BFD91F7EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D901B1CF-A5FB-4B09-A0D7-C1BFD91F7EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D901B1CF-A5FB-4B09-A0D7-C1BFD91F7EE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DD9AC4A-C1E5-400E-A04B-818469604F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DD9AC4A-C1E5-400E-A04B-818469604F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DD9AC4A-C1E5-400E-A04B-818469604F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DD9AC4A-C1E5-400E-A04B-818469604F33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
