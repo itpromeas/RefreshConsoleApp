@@ -267,3 +267,163 @@ namespace Section6Exercise
         }
     }
 }
+
+
+# workflow solution
+This is my solution for 'Design a workflow engine'. Any feedback would be greatly appreciated:
+
+Activites.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace Exercise
+{
+    public interface IActivites
+    {
+        void Execute();
+    }
+}
+
+
+Upload.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace Exercise
+{
+    public class Upload : IActivites
+    {
+        public void Execute()
+        {
+            Console.WriteLine("Uploading video...");
+        }
+    }
+}
+
+
+CallWebService.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace Exercise
+{
+    public class CallWebService : IActivites
+    {
+        public void Execute()
+        {
+            Console.WriteLine("Calling webservice...");
+        }
+    }
+}
+
+
+SendMailNotification.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace Exercise
+{
+    public class SendMailNotification : IActivites
+    {
+        public void Execute()
+        {
+            Console.WriteLine("Sending email notification to end user...");
+        }
+    }
+}
+
+
+StatusChange.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace Exercise
+{
+    public class StatusChange : IActivites
+    {
+        public void Execute()
+        {
+            Console.WriteLine("Status changed to processing...");
+        }
+    }
+}
+
+
+WorkflowEngine.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace Exercise
+{
+    public class WorkflowEngine
+    {
+        private readonly IList<IActivites> _activites;
+ 
+        public WorkflowEngine()
+        {
+            this._activites = new List<IActivites>();
+        }
+ 
+        public void RegisterActivity(IActivites activity)
+        {
+            _activites.Add(activity);
+        }
+ 
+        public void Run()
+        {
+            foreach(var activity in _activites)
+            {
+                activity.Execute();
+            }
+        }
+    }
+}
+
+
+Program.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var workFlow = new WorkflowEngine();
+            workFlow.RegisterActivity(new Upload());
+            workFlow.RegisterActivity(new CallWebService());
+            workFlow.RegisterActivity(new SendMailNotification());
+            workFlow.RegisterActivity(new StatusChange());
+            workFlow.Run();
+        }
+    }
+}
