@@ -4,16 +4,14 @@
 using RefreshConsoleApp;
 using RefreshConsoleApp.Casting;
 using RefreshConsoleApp.Compisition;
+using RefreshConsoleApp.Interfaces;
 using RefreshConsoleApp.Testability;
 
 
-var orderProcessor = new OrderProcessor(new ShippingCalculator());
 
-var order = new Order { DatePlaced = DateTime.Now, TotalPrice = 100f };
+Interfaces();
 
-orderProcessor.Process(order);
-
-
+// ShippingOrder()
 
 //CustomerOrder();
 
@@ -23,6 +21,24 @@ orderProcessor.Process(order);
 // Inheritance()
 
 //Composition();
+
+
+static void Interfaces()
+{
+    //var dbMigration = new DbMigration(new ConsoleLogger());
+    var dbMigration = new DbMigration(new FileLogger("C:\\Users\\messenga\\Documents\\log.txt"));
+    dbMigration.Migration();
+}
+
+
+static void ShippingOrder()
+{
+    var orderProcessor = new OrderProcessor(new ShippingCalculator());
+
+    var order = new Order { DatePlaced = DateTime.Now, TotalPrice = 100f };
+
+    orderProcessor.Process(order);
+}
 
 static void Casting()
 {
@@ -42,13 +58,13 @@ static void Casting()
 
 static void Composition()
 {
-    var dbMigrator = new DbMigration(new Logger());
+    var dbMigrator = new DbMigrationRefresh(new Logger());
 
     
     var logger = new Logger();
     var installer = new Installer(logger);
 
-    dbMigrator.Mygrate();
+    dbMigrator.Migrate();
     installer.Install();
 }
 
